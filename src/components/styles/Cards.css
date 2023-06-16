@@ -1,0 +1,19 @@
+.cards-container {
+    margin: 20px auto;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    .cards-container {
+        flex-direction: column;
+        padding: 0;
+    }
+}

@@ -1,0 +1,36 @@
+.highlights-container {
+  margin: 40px;
+  margin-top: 120px;
+}
+
+.highlights-header {
+  font-family: "Markazi Text", Cambria, serif;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+}
+
+.highlights-header h1 {
+  display: inline-block;
+  font-size: 3rem;
+  margin-left: 20px;
+}
+
+/* Media Queries  */
+
+@media (max-width: 768px) {
+  .highlights-container {
+    margin: 20px;
+  }
+
+  .highlights-header {
+    flex-direction: column;
+  }
+
+  .highlights-header h1 {
+    text-align: center;
+    margin-left: 0;
+  }
+}

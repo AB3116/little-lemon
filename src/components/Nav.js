@@ -2,7 +2,7 @@ import "./styles/Nav.css";
 
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import LittleLemonLogo from "../littlelemon.png";
+import LittleLemonLogo from "../static/littlelemon.png";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
