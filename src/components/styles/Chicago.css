@@ -1,0 +1,80 @@
+.about-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.about-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.about-content h1 {
+  color: var(--primary-color);
+  margin-bottom: 0;
+  font-family: "Markazi Text", "Cambria", serif;
+  font-size: 2rem;
+}
+
+.about-content h3 {
+  margin-top: 0;
+  font-family: "Markazi Text", "Cambria", serif;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+}
+
+.about-text {
+  margin-top: 10px;
+  line-height: 1.5;
+  font-family: Karla, "Segoe UI", serif;
+}
+
+.about-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.about-image-container #B {
+  height: 80%;
+  width: 50%;
+  max-width: 250px;
+  position: absolute;
+  top: 15%;
+  right: 45%;
+  object-fit: cover;
+  z-index: 2;
+  border-radius: 10px;
+  box-shadow: -10px 10px 30px 5px grey;
+  object-position: 80% center;
+}
+
+.about-image-container #A {
+  height: 80%;
+  width: 50%;
+  max-width: 250px;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  object-fit: cover;
+  z-index: 10;
+  border-radius: 10px;
+  box-shadow: -10px 10px 30px 5px grey;
+  object-position: 80% center;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+  }
+
+  #A,
+  #B {
+    display: none;
+  }
+}
