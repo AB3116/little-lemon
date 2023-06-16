@@ -19,8 +19,8 @@ const About = () => {
           </p>
         </section>
         <aside className="about-image-container">
-          <img src={Image1} alt="" id="A" />
-          <img src={Image2} alt="" id="B" />
+          <img src={Image1} alt="Chef Mario and Adrian" id="A" />
+          <img src={Image2} alt="Chef Mario and Adrian" id="B" />
         </aside>
       </div>
     </div>
