@@ -13,6 +13,7 @@ const Homepage = () => {
       <Specials />
       <CustomersSay />
       <Chicago />
+      <Footer />
     </>
   );
 };
