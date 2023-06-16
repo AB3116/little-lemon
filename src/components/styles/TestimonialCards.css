@@ -1,0 +1,21 @@
+.testimonial-cards {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding-bottom: 120px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Media Queries  */
+
+@media (max-width: 768px) {
+    .testimonial-cards {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+}

@@ -1,6 +1,7 @@
 import Header from "../Header";
 import CallToAction from "../CallToAction";
 import Specials from "../Specials"; 
+import CustomersSay from "../CustomersSay";
 
 const Homepage = () => {
   return (
@@ -8,6 +9,7 @@ const Homepage = () => {
       <Header />
       <CallToAction />
       <Specials />
+      <CustomersSay />
     </>
   );
 };

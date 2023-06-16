@@ -1,0 +1,51 @@
+.tm-card-container {
+  width: 20%;
+  border-radius: 10px;
+  background-color: var(--alternate-color);
+  font-family: Karla, sans-serif;
+  font-size: 16px;
+  color: var(--primary-color);
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.tm-card-msg {
+  line-height: 1.3;
+  height: 104px;
+  overflow-y: scroll;
+}
+
+.tm-card-main {
+  margin-bottom: 20px;
+}
+
+.tm-card-photo {
+  width: 70px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.tm-card-photo img {
+  width: 100%;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.tm-card-name {
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    .tm-card-container {
+        width: 100%;
+    }
+
+    .tm-card-msg {
+        height: fit-content;
+    }
+}
