@@ -10,7 +10,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
 
   const handleDateChange = (event) => {
     setDate(event.target.value);
-    dispatch({ type: date });
+    dispatch({ type: "GRAB_TIMES", data: new Date(date) });
   };
 
   const handleSubmit = (event) => {
@@ -56,7 +56,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
           value={guests}
           onChange={(event) => setGuests(event.target.value)}
         />
-        
+
         <label htmlFor="occasion">Occasion</label>
         <select
           id="occasion"
@@ -66,7 +66,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
           <option value="birthday">Birthday</option>
           <option value="anniversary">Anniversary</option>
         </select>
-        
+
         <input
           type="submit"
           value="Make Your Reservation"

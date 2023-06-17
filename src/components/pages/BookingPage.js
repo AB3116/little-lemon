@@ -1,24 +1,21 @@
-import { useReducer, useEffect } from "react";
+import { useReducer } from "react";
 import BookingForm from "../BookingForm";
 import Header from "../Header";
 import Footer from "../Footer";
+import { fetchAPI, submitAPI } from "../utils";
 
 const BookingPage = () => {
   const updateTimes = (state, action) => {
-    // switch (action.type) {
-    //   case "2023-06-16":
-    //     return ["21:00", "22:00", "23:00"];
-    //   case "2023-06-17":
-    //     return ["21:00", "22:00"];
-    //   case "2023-06-18":
-    //     return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"];
-    //   default:
-    return state;
-    // }
+    switch (action.type) {
+      case "GRAB_TIMES":
+        return fetchAPI(action.data);
+      default:
+        return state;
+    }
   };
 
   const initializeTimes = () => {
-    return ["17:00", "18:00"];
+    return fetchAPI(new Date());
   };
 
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
