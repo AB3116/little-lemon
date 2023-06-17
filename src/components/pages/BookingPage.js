@@ -23,7 +23,7 @@ const BookingPage = () => {
   return (
     <>
       <Header />
-      <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
+      <BookingForm availableTimes={availableTimes} dispatch={dispatch} submitAPI={submitAPI} />
       <Footer />
     </>
   );

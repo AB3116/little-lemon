@@ -22,3 +22,7 @@ select {
   border: 2px solid var(--secondary-color);
   font-family: "Karla", sans-serif;
 }
+
+input[type="submit"] {
+  cursor: pointer;
+}

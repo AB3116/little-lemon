@@ -1,12 +1,15 @@
 import "./styles/BookingForm.css";
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const BookingForm = ({ availableTimes, dispatch }) => {
+const BookingForm = ({ availableTimes, dispatch, submitAPI }) => {
   const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
   const [time, setTime] = useState(availableTimes[0]);
   const [guests, setGuests] = useState(4);
   const [occasion, setOccasion] = useState("birthday");
+
+  const navigate = useNavigate();
 
   const handleDateChange = (event) => {
     setDate(event.target.value);
@@ -15,6 +18,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    navigate("/confirmedbooking", { replace: true });
   };
 
   return (
@@ -31,7 +35,6 @@ const BookingForm = ({ availableTimes, dispatch }) => {
           value={date}
           onChange={handleDateChange}
         />
-
         <label htmlFor="res-time">Choose time</label>
         <select
           id="res-time"
@@ -45,7 +48,6 @@ const BookingForm = ({ availableTimes, dispatch }) => {
               </option>
             ))}
         </select>
-
         <label htmlFor="guests">Number of guests</label>
         <input
           type="number"
@@ -56,7 +58,6 @@ const BookingForm = ({ availableTimes, dispatch }) => {
           value={guests}
           onChange={(event) => setGuests(event.target.value)}
         />
-
         <label htmlFor="occasion">Occasion</label>
         <select
           id="occasion"
@@ -66,7 +67,6 @@ const BookingForm = ({ availableTimes, dispatch }) => {
           <option value="birthday">Birthday</option>
           <option value="anniversary">Anniversary</option>
         </select>
-
         <input
           type="submit"
           value="Make Your Reservation"
