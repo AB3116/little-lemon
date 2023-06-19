@@ -1,6 +1,6 @@
 import "./styles/BookingForm.css";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const BookingForm = ({ availableTimes, dispatch, submitAPI }) => {
@@ -12,10 +12,11 @@ const BookingForm = ({ availableTimes, dispatch, submitAPI }) => {
   const navigate = useNavigate();
 
   const handleDateChange = (event) => {
-    setDate(event.target.value);
+    const selectedDate = event.target.value;
+    setDate(selectedDate);
     dispatch({
       type: "GRAB_TIMES",
-      payload: { date: new Date(date) },
+      payload: { date: new Date(selectedDate) },
     });
   };
 
@@ -27,7 +28,14 @@ const BookingForm = ({ availableTimes, dispatch, submitAPI }) => {
       guests: guests,
       occasion: occasion,
     };
-    localStorage.setItem("booked_slots", JSON.stringify(formData));
+
+    const existingBookings =
+      JSON.parse(localStorage.getItem("booked_slots")) || [];
+
+    existingBookings.push(formData);
+
+    localStorage.setItem("booked_slots", JSON.stringify(existingBookings));
+    
     const resp = submitAPI(formData);
     if (resp) {
       navigate("/confirmedbooking", { replace: true });

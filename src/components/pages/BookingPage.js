@@ -1,4 +1,4 @@
-import { useReducer, useEffect } from "react";
+import { useReducer } from "react";
 import BookingForm from "../BookingForm";
 import Header from "../Header";
 import Footer from "../Footer";
@@ -12,19 +12,35 @@ const BookingPage = () => {
 
   // Returns only available times on a selected date.
   const fetchTimes = (date) => {
-    const allTimes = fetchAPI(date);
-    const bookedTimes = localStorage.length > 0 ? JSON.parse(localStorage.getItem("booked_slots")) : [];
+    // const allTimes = fetchAPI(date);
+    const allTimes = [
+      "17:00",
+      "18:00",
+      "19:00",
+      "20:00",
+      "21:00",
+      "22:00",
+      "23:00",
+    ];
+    const bookedTimes =
+      localStorage.length > 0
+        ? JSON.parse(localStorage.getItem("booked_slots"))
+        : [];
     const availableTimes = [];
-    if (bookedTimes["date"] === date.toISOString().split("T")[0]) {
-      for (let i = 0; i < allTimes.length; i++) {
-        if (bookedTimes["time"].includes(allTimes[i])) {
-          continue;
-        }
-        availableTimes.push(allTimes[i]);
-      }
 
-      return availableTimes;
+    for (const bookedTime of bookedTimes) {
+      if (bookedTime["date"] === date.toISOString().split("T")[0]) {
+        for (let i = 0; i < allTimes.length; i++) {
+          if (bookedTime["time"].includes(allTimes[i])) {
+            continue;
+          }
+          availableTimes.push(allTimes[i]);
+        }
+
+        return availableTimes;
+      }
     }
+
     return allTimes;
   };
 
@@ -50,10 +66,6 @@ const BookingPage = () => {
       <Footer />
     </>
   );
-};
-
-const BookingSlot = () => {
-  return <>BookingSlot</>;
 };
 
 export default BookingPage;
