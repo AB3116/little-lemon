@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import BookingForm from "../BookingForm";
 import Header from "../Header";
 import Footer from "../Footer";
@@ -58,11 +58,7 @@ const BookingPage = () => {
   return (
     <>
       <Header />
-      <BookingForm
-        availableTimes={availableTimes}
-        dispatch={dispatch}
-        submitAPI={submitAPI}
-      />
+      <BookingForm />
       <Footer />
     </>
   );
