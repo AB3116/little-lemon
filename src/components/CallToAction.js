@@ -1,9 +1,11 @@
-import "./styles/CallToAction.css"
-import Hero from "../static/restaurantfood.png"
+import "./styles/CallToAction.css";
+import Hero from "../static/restaurantfood.png";
+import { Link } from "react-router-dom";
 
 const Main = () => {
-  return <main>
-     <div className="container">
+  return (
+    <main>
+      <div className="container">
         <section className="content">
           <h1 className="title">Little Lemon</h1>
           <h3>Chicago</h3>
@@ -13,13 +15,18 @@ const Main = () => {
             ingredients to the table. Simply put, we're here to bring you a
             sandwich experience you can feel good about.
           </p>
-          <button className="button" type="button">Reserve a table</button>
+          <Link to="/booking">
+            <button className="button btn-cta" type="button">
+              Reserve a table
+            </button>
+          </Link>
         </section>
         <aside className="image-container">
           <img src={Hero} alt="Hero" />
         </aside>
       </div>
-  </main>;
+    </main>
+  );
 };
 
 export default Main;

@@ -11,6 +11,10 @@
   object-fit: cover;
 }
 
+.card-image img:hover {
+  opacity: 0.7;
+}
+
 .card-text {
   padding: 20px;
 }

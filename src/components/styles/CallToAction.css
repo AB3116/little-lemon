@@ -64,6 +64,11 @@ main {
   cursor: pointer;
 }
 
+.btn-cta:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 /* Media Queries */
 
 @media (max-width: 768px) {

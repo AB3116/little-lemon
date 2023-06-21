@@ -3,6 +3,11 @@
   margin: 0 auto;
 }
 
+.full-form-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
 form {
   display: grid;
   row-gap: 2rem;
@@ -107,7 +112,7 @@ button {
   bottom: 0;
   left: 0;
   z-index: 5;
-  background-color: rgba(0,0,0,0.5); 
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .personal-form-overlay .modal-box {
@@ -140,4 +145,36 @@ button {
 .personal-form-overlay .modal-box .modal-buttons {
   display: flex;
   justify-content: space-between;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+  .fullname-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .fname-container,
+  .lname-container {
+    width: 100%;
+  }
+
+  .personal-form-overlay .modal-box {
+    width: calc(80% - 20px);
+    top: 50%;
+  }
+
+  .personal-form-overlay .modal-box .modal-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .personal-form-overlay .modal-box button {
+    width: 100%;
+  }
+  .full-form-container {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }

@@ -42,7 +42,7 @@ const FormikForm = ({ setPage }) => {
   const { formData, setFormData, today, availableTimes } =
     useContext(FormDataContext);
 
-  const [modal, setModal] = useState(true);
+  const [modal, setModal] = useState(false);
 
   return (
     <div className="form-container">
