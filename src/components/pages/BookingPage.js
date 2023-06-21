@@ -1,5 +1,7 @@
-import { useReducer, useState } from "react";
-import BookingForm from "../BookingForm";
+import { useReducer } from "react";
+import Form from "../Form/Form";
+import FormDataProvider from "../Form/FormContext";
+
 import Header from "../Header";
 import Footer from "../Footer";
 import { fetchAPI, submitAPI } from "../utils";
@@ -57,9 +59,11 @@ const BookingPage = () => {
 
   return (
     <>
-      <Header />
-      <BookingForm />
-      <Footer />
+      <FormDataProvider>
+        <Header />
+        <Form />
+        <Footer />
+      </FormDataProvider>
     </>
   );
 };

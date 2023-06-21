@@ -1,0 +1,90 @@
+.form-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+form {
+  display: grid;
+  row-gap: 2rem;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+small {
+  color: white;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.fullname-container {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.messages {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fname-container,
+.lname-container,
+.email-container,
+.phone-container,
+.submit-container,
+.creditcard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.fname-container,
+.lname-container {
+  width: 50%;
+}
+
+.error {
+  color: red;
+  font-size: 0.8rem;
+}
+
+.mandatory {
+  color: red;
+}
+
+input,
+button {
+  padding: 0.5rem 1rem;
+}
+
+.lname-error,
+.fname-error,
+.email-error,
+.phone-error,
+.creditcard-error {
+  border: 2px solid red;
+}
+
+.lname-error:focus,
+.fname-error:focus,
+.email-error:focus,
+.phone-error:focus,
+.creditcard-error:focus {
+  outline: none !important;
+  border: 2px solid red;
+  box-shadow: 0 0 10px tomato;
+}
+
+.btn-form {
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  font-size: 1rem;
+  margin-right: 0;
+  cursor: pointer;
+}
+
+.btn-form:hover {
+  opacity: 0.5 !important;
+}

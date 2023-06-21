@@ -1,0 +1,93 @@
+.form-container {
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: var(--primary-color);
+}
+
+form {
+  display: grid;
+  row-gap: 2rem;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+small {
+  color: rgba(255, 255, 255, 0.9);
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.fullname-container {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.messages {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fname-container,
+.lname-container,
+.email-container,
+.phone-container,
+.submit-container,
+.creditcard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.fname-container,
+.lname-container {
+  width: 50%;
+}
+
+.error {
+  color: red;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.mandatory {
+  color: red;
+}
+
+input,
+button {
+  padding: 0.5rem 1rem;
+}
+
+.lname-error,
+.fname-error,
+.email-error,
+.phone-error,
+.creditcard-error {
+  border: 2px solid red;
+}
+
+.lname-error:focus,
+.fname-error:focus,
+.email-error:focus,
+.phone-error:focus,
+.creditcard-error:focus {
+  outline: none !important;
+  border: 2px solid red;
+  box-shadow: 0 0 10px tomato;
+}
+
+.no-margin {
+    margin-right: 0;
+    cursor: pointer;
+}
+
+.no-margin:hover {
+    opacity: 0.9;
+}
+
+.no-margin:disabled {
+    opacity: 0.5;
+}
