@@ -88,3 +88,42 @@ button {
 .btn-form:hover {
   opacity: 0.5 !important;
 }
+
+.personal-form-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.personal-form-overlay .modal-box {
+  width: 500px;
+  background-color: white;
+  border-radius: 16px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) !important;
+  padding: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.personal-form-overlay .modal-box button {
+  background-color: var(--primary-color);
+  font-family: "Karla", sans-serif;
+  color: white;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.personal-form-overlay .modal-box button:hover {
+  opacity: 0.8;
+}
+
+.personal-form-overlay .modal-box .modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}

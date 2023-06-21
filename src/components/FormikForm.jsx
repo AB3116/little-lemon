@@ -2,7 +2,7 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import "./FormikForm.css";
 import { setLocalStorage } from "./utils";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FormDataContext } from "./Form/FormContext";
 
 const ValidationSchema = Yup.object().shape({
@@ -40,8 +40,27 @@ const ValidationSchema = Yup.object().shape({
 const FormikForm = ({ setPage }) => {
   const { formData, setFormData, today, availableTimes } =
     useContext(FormDataContext);
+
+  const [modal, setModal] = useState(false);
+
   return (
     <div className="form-container">
+      {modal && (
+        <div className={modal && "personal-form-overlay"}>
+          <div className="modal-box">
+            <p>Hooray! Your booking has been confirmed and locked in.</p>
+            <div className="modal-buttons">
+              <button
+                style={{ background: "white", color: "var(--primary-color)" }}
+              >
+                Go home
+              </button>
+              <button>Make another reservation</button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <Formik
         initialValues={{
           fname: "",
@@ -64,6 +83,7 @@ const FormikForm = ({ setPage }) => {
             occasion: "birthday",
           });
           resetForm();
+          setModal(curr => !curr);
           setPage(0);
         }}
       >
@@ -208,7 +228,7 @@ const FormikForm = ({ setPage }) => {
 
             <div className="submit-container">
               <button
-              className="button btn-form"
+                className="button btn-form"
                 type="submit"
                 disabled={
                   !(

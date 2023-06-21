@@ -4,7 +4,7 @@ import FormDataProvider from "../Form/FormContext";
 
 import Header from "../Header";
 import Footer from "../Footer";
-import { fetchAPI, submitAPI } from "../utils";
+import { fetchAPI } from "../utils";
 
 const BookingPage = () => {
   // Initializes times of today's date when the page is first loaded.
