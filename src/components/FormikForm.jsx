@@ -42,7 +42,7 @@ const FormikForm = ({ setPage }) => {
   const { formData, setFormData, today, availableTimes } =
     useContext(FormDataContext);
 
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(true);
 
   return (
     <div className="form-container">
@@ -58,7 +58,7 @@ const FormikForm = ({ setPage }) => {
                   Go home
                 </button>
               </Link>
-              <Link to="/booking">
+              <Link to="/booking" target="_blank">
                 <button>Make another reservation</button>
               </Link>
             </div>
@@ -79,8 +79,7 @@ const FormikForm = ({ setPage }) => {
         validationSchema={ValidationSchema}
         onSubmit={(values, { resetForm }) => {
           setLocalStorage(formData);
-          setModal(true);
-          console.log(modal);
+          setModal(!modal);
           setFormData({
             date: today,
             time: availableTimes[0],
@@ -88,7 +87,6 @@ const FormikForm = ({ setPage }) => {
             occasion: "birthday",
           });
           resetForm();
-          // setPage(0);
         }}
       >
         {({ errors, touched }) => (
