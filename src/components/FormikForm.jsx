@@ -4,6 +4,7 @@ import "./FormikForm.css";
 import { setLocalStorage } from "./utils";
 import { useContext, useState } from "react";
 import { FormDataContext } from "./Form/FormContext";
+import { Link } from "react-router-dom";
 
 const ValidationSchema = Yup.object().shape({
   fname: Yup.string()
@@ -50,12 +51,16 @@ const FormikForm = ({ setPage }) => {
           <div className="modal-box">
             <p>Hooray! Your booking has been confirmed and locked in.</p>
             <div className="modal-buttons">
-              <button
-                style={{ background: "white", color: "var(--primary-color)" }}
-              >
-                Go home
-              </button>
-              <button>Make another reservation</button>
+              <Link to="/">
+                <button
+                  style={{ background: "white", color: "var(--primary-color)" }}
+                >
+                  Go home
+                </button>
+              </Link>
+              <Link to="/booking">
+                <button>Make another reservation</button>
+              </Link>
             </div>
           </div>
         </div>
@@ -73,9 +78,9 @@ const FormikForm = ({ setPage }) => {
         }}
         validationSchema={ValidationSchema}
         onSubmit={(values, { resetForm }) => {
-          // same shape as initial values
           setLocalStorage(formData);
-          // console.log(values);
+          setModal(true);
+          console.log(modal);
           setFormData({
             date: today,
             time: availableTimes[0],
@@ -83,8 +88,7 @@ const FormikForm = ({ setPage }) => {
             occasion: "birthday",
           });
           resetForm();
-          setModal(curr => !curr);
-          setPage(0);
+          // setPage(0);
         }}
       >
         {({ errors, touched }) => (
