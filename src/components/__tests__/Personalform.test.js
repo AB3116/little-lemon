@@ -1,7 +1,7 @@
 import React from "react";
-import { render, fireEvent, waitFor } from "@testing-library/react";
+import { render, fireEvent, waitFor, act } from "@testing-library/react";
 import { FormDataContext } from "../Form/FormContext";
-import PersonalDetailsForm from "../FormikForm";
+import PersonalDetailsForm from "../Form/PersonalForm";
 
 describe("PersonalDetailsForm", () => {
   it("should render all labels correctly", () => {
@@ -95,7 +95,7 @@ describe("PersonalDetailsForm", () => {
     fireEvent.click(document.body);
 
     // Wait for form validation to complete
-    await waitFor(() => {
+    await act(async () => {
       const submitButton = getByRole("button", { name: /Submit/ });
       expect(submitButton).toHaveAttribute("disabled", "");
     });

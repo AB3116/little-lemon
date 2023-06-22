@@ -1,8 +1,8 @@
 import { render } from "@testing-library/react";
 import { FormDataContext } from "../Form/FormContext";
-import App from "../App";
+import BookingForm from "../Form/BookingForm";
 
-describe("App component", () => {
+describe("BookingForm component", () => {
   it("verifies all labels are rendered correctly", () => {
     // Mocked context value
     const mockContextValue = {
@@ -20,7 +20,7 @@ describe("App component", () => {
 
     const { getByLabelText } = render(
       <FormDataContext.Provider value={mockContextValue}>
-        <App />
+        <BookingForm />
       </FormDataContext.Provider>
     );
 
