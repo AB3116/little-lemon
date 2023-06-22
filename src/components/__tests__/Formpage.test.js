@@ -1,9 +1,9 @@
 import React from "react";
 import { render, fireEvent, screen, waitFor } from "@testing-library/react";
 import { FormDataContext } from "../Form/FormContext";
-import FormikForm from "../FormikForm";
+import PersonalDetailsForm from "../FormikForm";
 
-describe("FormikForm", () => {
+describe("PersonalDetailsForm", () => {
   it("should render all labels correctly", () => {
     const formData = {
       date: "2023-06-22",
@@ -14,7 +14,7 @@ describe("FormikForm", () => {
 
     const { getByLabelText } = render(
       <FormDataContext.Provider value={{ formData }}>
-        <FormikForm />
+        <PersonalDetailsForm />
       </FormDataContext.Provider>
     );
 
@@ -38,7 +38,7 @@ describe("FormikForm", () => {
 
     const { getByLabelText, getByText, queryByText } = render(
       <FormDataContext.Provider value={{ formData }}>
-        <FormikForm />
+        <PersonalDetailsForm />
       </FormDataContext.Provider>
     );
 
@@ -55,6 +55,49 @@ describe("FormikForm", () => {
     // Wait for form validation to complete
     await waitFor(() => {
       expect(getByText(/Required/)).toBeInTheDocument();
+    });
+  });
+
+  it("should enable submit button after form filling and clicking outside", async () => {
+    const formData = {
+      date: "2023-06-22",
+      time: "17:00",
+      number: "4",
+      occasion: "birthday",
+    };
+
+    const { getByLabelText, getByRole } = render(
+      <FormDataContext.Provider value={{ formData }}>
+        <PersonalDetailsForm />
+      </FormDataContext.Provider>
+    );
+
+    // Fill in the form fields
+    fireEvent.change(getByLabelText(/First name/), {
+      target: { value: "Jane" },
+    });
+    fireEvent.change(getByLabelText(/Last name/), { target: { value: "Doe" } });
+    fireEvent.change(getByLabelText(/Email/), {
+      target: { value: "jane123@xyz.com" },
+    });
+    fireEvent.change(getByLabelText(/Phone number/), {
+      target: { value: "9876598765" },
+    });
+    fireEvent.change(getByLabelText(/Credit Card Number/), {
+      target: { value: "4242424242424242" },
+    });
+    fireEvent.change(getByLabelText(/Expiration Date/), {
+      target: { value: "1199" },
+    });
+    fireEvent.change(getByLabelText(/CVV\/CVC/), { target: { value: "876" } });
+
+    // Simulate clicking outside the form
+    fireEvent.click(document.body);
+
+    // Wait for form validation to complete
+    await waitFor(() => {
+      const submitButton = getByRole("button", { name: /Submit/ });
+      expect(submitButton).toHaveAttribute("disabled", "");
     });
   });
 });
