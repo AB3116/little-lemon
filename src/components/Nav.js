@@ -1,11 +1,10 @@
-import "./styles/Nav.css";
-
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import LittleLemonLogo from "../static/littlelemon.png";
 import { Link } from "react-router-dom";
+import "./styles/Nav.css";
 
-const NavBar = () => {
+const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleMenuToggle = () => {
@@ -48,4 +47,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Nav;

@@ -1,17 +1,15 @@
-import "./styles/CustomersSay.css"
-import TestimonialCards from "./TestimonialCards"
+import "./styles/CustomersSay.css";
+import TestimonialCards from "./TestimonialCards";
 
-const Testimonial = () => {
+const CustomersSay = () => {
   return (
     <div className="testimonial-container">
-        <div className="testimonial-header">
-            Testimonials
-        </div>
-        <div className="tm-cards">
-            <TestimonialCards />
-        </div>
+      <div className="testimonial-header">Testimonials</div>
+      <div className="tm-cards">
+        <TestimonialCards />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Testimonial
+export default CustomersSay;

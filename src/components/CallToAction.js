@@ -1,8 +1,8 @@
-import "./styles/CallToAction.css";
 import Hero from "../static/restaurantfood.png";
 import { Link } from "react-router-dom";
+import "./styles/CallToAction.css";
 
-const Main = () => {
+const CallToAction = () => {
   return (
     <main>
       <div className="container">
@@ -29,4 +29,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default CallToAction;

@@ -1,7 +1,7 @@
 import Cards from "./Cards";
 import "./styles/Specials.css";
 
-const Highlights = () => {
+const Specials = () => {
   return (
     <div className="highlights-container">
       <div className="highlights-header">
@@ -17,4 +17,4 @@ const Highlights = () => {
   );
 };
 
-export default Highlights;
+export default Specials;

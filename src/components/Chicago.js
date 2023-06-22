@@ -2,7 +2,7 @@ import "./styles/Chicago.css";
 import Image1 from "../static//Mario and Adrian A.png";
 import Image2 from "../static/Mario and Adrian B.png";
 
-const About = () => {
+const Chicago = () => {
   return (
     <div>
       <div className="about-container">
@@ -27,4 +27,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Chicago;
