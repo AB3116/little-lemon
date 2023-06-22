@@ -7,12 +7,10 @@ import Footer from "../Footer";
 import { fetchAPI } from "../utils";
 
 const BookingPage = () => {
-  // Initializes times of today's date when the page is first loaded.
   const initializeTimes = () => {
     return fetchAPI(new Date());
   };
 
-  // Returns only available times on a selected date.
   const fetchTimes = (date) => {
     // const allTimes = fetchAPI(date);
     const allTimes = [

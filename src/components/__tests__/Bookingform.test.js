@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { FormDataContext } from "../Form/FormContext";
 import BookingForm from "../Form/BookingForm";
 
@@ -18,17 +18,17 @@ describe("BookingForm component", () => {
       today: "2023-06-22",
     };
 
-    const { getByLabelText } = render(
+    render(
       <FormDataContext.Provider value={mockContextValue}>
         <BookingForm />
       </FormDataContext.Provider>
     );
 
     // Labels for date, time, number, and occasion
-    const dateLabel = getByLabelText(/choose date/i);
-    const timeLabel = getByLabelText(/choose time/i);
-    const numberLabel = getByLabelText(/number of guests/i);
-    const occasionLabel = getByLabelText(/occasion/i);
+    const dateLabel = screen.getByLabelText(/choose date/i);
+    const timeLabel = screen.getByLabelText(/choose time/i);
+    const numberLabel = screen.getByLabelText(/number of guests/i);
+    const occasionLabel = screen.getByLabelText(/occasion/i);
 
     // Assertion
     expect(dateLabel).toBeInTheDocument();
