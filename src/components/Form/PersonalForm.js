@@ -1,10 +1,10 @@
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
-import "./FormikForm.css";
-import { setLocalStorage } from "./utils";
+import { setLocalStorage } from "../utils";
 import { useContext, useState } from "react";
-import { FormDataContext } from "./Form/FormContext";
+import { FormDataContext } from "./FormContext";
 import { Link } from "react-router-dom";
+import "../styles/PersonalForm.css";
 
 const ValidationSchema = Yup.object().shape({
   fname: Yup.string()
