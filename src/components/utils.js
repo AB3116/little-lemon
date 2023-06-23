@@ -1,4 +1,4 @@
-const seededRandom = function (seed) {
+export const seededRandom = function (seed) {
   var m = 2 ** 35 - 31;
   var a = 185852;
   var s = seed % m;
@@ -26,7 +26,7 @@ export const submitAPI = function (formData) {
   return true;
 };
 
-function removeTime(arr, item) {
+export function removeTime(arr, item) {
   const index = arr.indexOf(item);
   arr.splice(index, 1);
 }
