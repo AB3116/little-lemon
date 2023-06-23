@@ -7,7 +7,7 @@ function FormDataProvider({ children }) {
   const today = new Date();
 
   const initializeTimes = (date) => {
-    if (localStorage.getItem("formData").length > 0) return getTimes(date);
+    if (localStorage.length > 0) return getTimes(date);
     return fetchAPI(date);
   };
 
