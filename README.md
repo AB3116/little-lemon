@@ -2,6 +2,9 @@
 
 Welcome to the "Little Lemon" web app! This project is a booking system for a fictional restaurant. It allows users to book tables and manages the availability of timings based on previous bookings. Here's some important information about the project:
 
+## Quick Demo
+[![Test Demo](https://img.youtube.com/vi/BmWJgjdc5OI/0.jpg)](https://youtu.be/BmWJgjdc5OI)
+
 ## Setup Instructions
 
 This project was created using [create-react-app](https://www.npmjs.com/package/create-react-app). To run the app, use the following command:
