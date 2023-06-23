@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# Little Lemon - React Booking System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the "Little Lemon" web app! This project is a booking system for a fictional restaurant. It allows users to book tables and manages the availability of timings based on previous bookings. Here's some important information about the project:
 
-## Available Scripts
+## Setup Instructions
 
-In the project directory, you can run:
-
+This project was created using [create-react-app](https://www.npmjs.com/package/create-react-app). To run the app, use the following command:
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#
+Note: Before running the app, make sure to install the project dependencies using the command:
+### `npm install`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
+#
+Test files for the components can be found in the `src/components/__tests__` directory. To run the tests, use the following command:
 ### `npm test`
+#
+## App Features
+`Responsive Design:` The "Little Lemon" web app is fully responsive. It adapts to different screen sizes, allowing users to access and interact with the booking system seamlessly.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`Local Storage:` The app stores booked data in the browser's local storage. To check the stored data, follow these steps:
 
-### `npm run build`
+Open the developer tools in your browser (usually done by pressing F12 or right-clicking and selecting "Inspect").
+Navigate to the "Application" or "Storage" tab in the developer tools.
+Expand the "Local Storage" section.
+Look for the entry related to the "Little Lemon" app to view the stored data.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`Multi-Step React Form:` The booking form in the app is implemented as a multi-step form using React. It guides the user through a series of steps to complete the booking process. The state of the form is managed using the Context API, which allows for efficient state management across multiple components.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to explore the "Little Lemon" web app and test its features. Enjoy your experience and have a great time using the booking system!
