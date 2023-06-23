@@ -58,8 +58,8 @@ const FormikForm = ({ setPage }) => {
                   Go home
                 </button>
               </Link>
-              <Link to="/booking" target="_blank">
-                <button>Make another reservation</button>
+              <Link to="/booking">
+                <button onClick={() => setPage(0)}>Make another reservation</button>
               </Link>
             </div>
           </div>

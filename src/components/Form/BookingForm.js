@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { FormDataContext } from "./FormContext";
 import "../styles/BookingForm.css";
+import { toStringDate } from "../utils";
 
 const App = ({ setPage }) => {
   const { formData, setFormData, availableTimes, dispatch, today } =
@@ -30,7 +31,7 @@ const App = ({ setPage }) => {
           type="date"
           name="res-date"
           id="res-date"
-          min={today}
+          min={toStringDate(today)}
           value={formData.date}
           onChange={handleDateChange}
           placeholder="Date"
