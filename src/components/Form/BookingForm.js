@@ -1,10 +1,9 @@
 import { useContext } from "react";
-import { getTimes } from "../utils";
 import { FormDataContext } from "./FormContext";
 import "../styles/BookingForm.css";
 
 const App = ({ setPage }) => {
-  const { formData, setFormData, availableTimes, setAvailableTimes, today } =
+  const { formData, setFormData, availableTimes, dispatch, today } =
     useContext(FormDataContext);
 
   const handleFormSubmit = (e) => {
@@ -18,7 +17,7 @@ const App = ({ setPage }) => {
       ...formData,
       date: e.target.value,
     });
-    setAvailableTimes(getTimes(e.target.value));
+    dispatch({ type: "GRAB_TIMES", value: new Date(e.target.value)});
   };
 
   return (

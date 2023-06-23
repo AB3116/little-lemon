@@ -31,6 +31,10 @@ function removeTime(arr, item) {
   arr.splice(index, 1);
 }
 
+export function toStringDate(date) {
+  return date.toISOString().split("T")[0];
+}
+
 export function setLocalStorage(formData) {
   const existingStorage =
     localStorage.length > 0 ? JSON.parse(localStorage.getItem("formData")) : [];
@@ -42,26 +46,16 @@ export function setLocalStorage(formData) {
 }
 
 export function getTimes(date) {
-  const availableTimes = [
-    "17:00",
-    "17:30",
-    "18:00",
-    "18:30",
-    "19:00",
-    "19:30",
-    "20:00",
-    "20:30",
-    "21:00",
-    "21:30",
-    "22:00",
-  ];
+  const availableTimes = fetchAPI(date);
   const existingStorage =
     localStorage.length > 0 ? JSON.parse(localStorage.getItem("formData")) : [];
 
-  for (const item of existingStorage) {
-    if (item.date !== date) continue;
-    if (availableTimes.includes(item.time))
-      removeTime(availableTimes, item.time);
+  if (existingStorage.length > 0) {
+    for (const item of existingStorage) {
+      if (item.date === toStringDate(date)) {
+        removeTime(availableTimes, item.time);
+      }
+    }
   }
 
   return availableTimes;

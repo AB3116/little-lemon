@@ -1,11 +1,28 @@
-import { createContext, useState } from "react";
-import { getTimes } from "../utils";
+import { createContext, useState, useReducer } from "react";
+import { fetchAPI, getTimes } from "../utils";
 
 export const FormDataContext = createContext();
 
 function FormDataProvider({ children }) {
-  const today = new Date().toISOString().split("T")[0];
-  const [availableTimes, setAvailableTimes] = useState(getTimes(today));
+  const today = new Date();
+
+  const initializeTimes = (date) => {
+    return fetchAPI(date);
+  };
+
+  const updateTimes = (state, action) => {
+    switch (action.type) {
+      case "GRAB_TIMES":
+        return getTimes(action.value);
+      default:
+        return state;
+    }
+  };
+
+  const [availableTimes, dispatch] = useReducer(
+    updateTimes,
+    initializeTimes(today)
+  );
 
   const [formData, setFormData] = useState({
     date: today,
@@ -20,7 +37,7 @@ function FormDataProvider({ children }) {
         formData,
         setFormData,
         availableTimes,
-        setAvailableTimes,
+        dispatch,
         today,
       }}
     >

@@ -1,4 +1,9 @@
 header {
     display: flex;
     justify-content: center;
+    position: sticky;
+    z-index: 50;
+    top: 0;
+    width: 100%;
+    background-color: white;
 }
