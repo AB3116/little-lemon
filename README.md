@@ -14,8 +14,8 @@ Note: Before running the app, make sure to install the project dependencies usin
 #
 Test files for the components can be found in the `src/components/__tests__` directory. To run the tests, use the following command:
 ### `npm test`
-
-[![Test Demo](https://img.youtube.com/vi/k2HuuarWJyI/0.jpg)](https://youtu.be/k2HuuarWJyI)
+Click here to see tests running:
+# [![Test Demo](https://img.youtube.com/vi/k2HuuarWJyI/0.jpg)](https://youtu.be/k2HuuarWJyI)
 
 #
 ## App Features
